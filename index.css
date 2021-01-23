@@ -1,0 +1,14 @@
+#navbarSupportedContent{
+    justify-content: space-between;
+}
+
+.logo{
+    max-width: 50%;
+}
+
+#tituloCarta{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2em 0;
+}
