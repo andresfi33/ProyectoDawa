@@ -12,3 +12,31 @@
     font-weight: bold;
     margin: 2em 0;
 }
+
+.indice{
+    width: 100%;
+}
+
+img{
+    float:right;
+}
+
+.indiceProductos:hover{
+    cursor: pointer;
+}
+
+.listaProductos{
+    display:none;
+}
+
+img.icono{
+    transition:all 0.15s;
+}
+
+img.icono-rotado{
+    transform:rotate(90deg);
+}
+
+.d-flex{
+    padding-bottom: 0.5em;
+}

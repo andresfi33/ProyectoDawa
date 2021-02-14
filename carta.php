@@ -45,11 +45,6 @@
 					<li class="nav-item">
 						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 					</li>
-				</ul>
-				<form class="d-flex">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				</form>
 			</div>
 		</div>
 	</nav>
@@ -57,7 +52,7 @@
 	<div id="tituloCarta">
 		¿Que le apetece hoy?
 	</div>
-	
+
 	<div class="container">
 		<div class="row container">
 			<div class="col-xs-12 col-sm-6 col-md-4">
@@ -70,10 +65,82 @@
 					<li>100% Vegano</li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4">.col-sm-6</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button type="submit">
+						<img src="./img/iconos/buscar.svg" />
+					</button>
+				</form>
+				<div>
+					<div class="indiceProductos">
+						<span><b>Nuestras especialidades</b></span>
+						<img class="icono" src="./img/iconos/flecha_derecha.svg" />
+					</div>
+					<ul class="listaProductos">
+						<li>
+							<div>
+								<b>Churrasco de cerdo</b>
+								<span></span>
+							</div>
+							<div class="precio"><span>8,50 €</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Ración de guacamole casero con nachos</b>
+								<span></span>
+							</div>
+							<div class="precio"><span>8,50 €</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Ración de patatas con ali oli</b>
+								<span></span>
+							</div>
+							<div class="precio"><span>5,50 €</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Ración de patatas bravas</b>
+								<span></span>
+							</div>
+							<div class="precio"><span>5,50 €</span></div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="indiceProductos">
+						<span><b>Tortillas</b></span>
+						<img class="icono" src="./img/iconos/flecha_derecha.svg" />
+					</div>
+					<ul class="listaProductos">
+						<li>
+							<div>
+								<b>Tortilla de patata</b>
+								<span></span>
+							</div>
+							<div class="precio"><span>7 €</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Tortilla de patata con cebolla</b>
+								<span></span>
+							</div>
+							<div class="precio"><span>8 €</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Tortilla de patata con chorizo</b>
+								<span></span>
+							</div>
+							<div class="precio"><span>8,5 €</span></div>
+						</li>
+					</ul>
+				</div>
+			</div>
 			<div class="col-xs-12 col-sm-6 col-md-4">.col-sm-6</div>
 		</div>
 	</div>
+	<script src="./javascript/carta.js"></script>
 </body>
-
 </html>
