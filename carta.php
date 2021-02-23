@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<meta charset="UTF-8">
@@ -12,12 +12,13 @@
 	<!-- FIN BOOTSTRAP -->
 	<link rel="stylesheet" href="index.css">
 	<title>Carta</title>
+	<link rel="icon" type="image/png" href="img/iconoRestaurante.png">
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg">
 		<div class="container">
-			<a class="navbar-brand" href="#"><img src="img/LogoPequeno.png" class="logo img-fluid"></a>
+			<a class="navbar-brand" href="#"><img src="img/iconoRestaurante.png" class="logo img-fluid"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -42,30 +43,27 @@
 							<li><a class="dropdown-item" href="#">Something else here</a></li>
 						</ul>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-					</li>
 			</div>
 		</div>
 	</nav>
 
-	<div id="tituloCarta">
+	<div id="tituloCarta" class="colorPrincipal">
 		¿Que le apetece hoy?
 	</div>
 
 	<div class="container">
-		<div class="row container">
-			<div class="col-xs-12 col-sm-6 col-md-4">
-				<span>Categorías</span>
-				<ul>
-					<li>Nuestras especialidades</li>
-					<li>Tortillas</li>
+		<div class="row container principal">
+			<div class="col-xs-12 col-sm-6 col-md-3 indice">
+				<span class="colorPrincipal">Categorías</span>
+				<ul class="listaCarta">
+					<li><a href="#nuestrasEspecialidades" onclick="abrirIndice('#nuestrasEspecialidades')">Nuestras Especialidades</a></li>
+					<li><a href="#tortillas" onclick="abrirIndice('#tortillas')">Tortillas</a></li>
 					<li>Carnes</li>
 					<li>Pescados</li>
 					<li>100% Vegano</li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="col-xs-12 col-sm-6 col-md-5">
 				<form class="d-flex">
 					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 					<button type="submit">
@@ -73,47 +71,43 @@
 					</button>
 				</form>
 				<div>
-					<div class="indiceProductos">
+					<div class="indiceProductos" id="nuestrasEspecialidades">
 						<span><b>Nuestras especialidades</b></span>
 						<img class="icono" src="./img/iconos/flecha_derecha.svg" />
 					</div>
-					<ul class="listaProductos">
+					<ul class="listaProductos listaCarta">
 						<li>
 							<div>
 								<b>Churrasco de cerdo</b>
-								<span></span>
 							</div>
 							<div class="precio"><span>8,50 €</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Ración de guacamole casero con nachos</b>
-								<span></span>
 							</div>
 							<div class="precio"><span>8,50 €</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Ración de patatas con ali oli</b>
-								<span></span>
 							</div>
 							<div class="precio"><span>5,50 €</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Ración de patatas bravas</b>
-								<span></span>
 							</div>
 							<div class="precio"><span>5,50 €</span></div>
 						</li>
 					</ul>
 				</div>
 				<div>
-					<div class="indiceProductos">
+					<div class="indiceProductos" id="tortillas">
 						<span><b>Tortillas</b></span>
 						<img class="icono" src="./img/iconos/flecha_derecha.svg" />
 					</div>
-					<ul class="listaProductos">
+					<ul class="listaProductos listaCarta">
 						<li>
 							<div>
 								<b>Tortilla de patata</b>
@@ -135,12 +129,74 @@
 							</div>
 							<div class="precio"><span>8,5 €</span></div>
 						</li>
+						<li>
+							<div>
+								<b>Tortilla de patata con espárragos</b>
+								<span></span>
+							</div>
+							<div class="precio"><span>8,75 €</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Tortilla de patata con huevos ecológicos</b>
+								<span></span>
+							</div>
+							<div class="precio"><span>12,5 €</span></div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="indiceProductos" id="pescados">
+						<span><b>Pescados</b></span>
+						<img class="icono" src="./img/iconos/flecha_derecha.svg" />
+					</div>
+					<ul class="listaProductos listaCarta">
+						<li>
+							<div>
+								<b>Salmón ahumado</b>
+							</div>
+							<div class="precio"><span>9'95 €</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Merluza</b>
+							</div>
+							<div class="precio"><span>7 €</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Pez espada</b>
+							</div>
+							<div class="precio"><span>18,5 €</span></div>
+						</li>
 					</ul>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4">.col-sm-6</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 colCarrito">
+				<div class="carrito">
+					<div style="display: none;"></div>
+					<ul>
+						<li>
+							<div>
+								<b>Tortilla de patata vegana con cebolla</b>
+								<input type="number" value="1" min="1">
+								<i class="icon-plus btInput"></i>
+								<i class="icon-minus btInput"></i>
+								<i class="icon-trash-empty"></i>
+							</div>
+							<span>9,00€</span>
+						</li>
+					</ul>
+					<b>Total pedido</b>
+					<b id="precioTotal">9,00 €</b>
+				</div>
+				<div id="pagar">
+					<input type="submit" value="Realizar pedido">
+				</div>
+			</div>
 		</div>
 	</div>
 	<script src="./javascript/carta.js"></script>
 </body>
+
 </html>
