@@ -30,18 +30,17 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">Link</a>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Dropdown
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li>
-								<hr class="dropdown-divider">
-							</li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
-						</ul>
+					<li class="nav-item">
+						<div class="dropdown">
+							<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Dropdown button
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<!--<a class="dropdown-item" href="#">Action</a>-->
+								<a class="dropdown-item" href="registro.php">Registrarse</a>
+								<a class="dropdown-item" href="#">Cerrar Sesión</a>
+							</div>
+						</div>
 					</li>
 			</div>
 		</div>
@@ -58,9 +57,9 @@
 				<ul class="listaCarta">
 					<li><a href="#nuestrasEspecialidades" onclick="abrirIndice('#nuestrasEspecialidades')">Nuestras Especialidades</a></li>
 					<li><a href="#tortillas" onclick="abrirIndice('#tortillas')">Tortillas</a></li>
-					<li>Carnes</li>
-					<li>Pescados</li>
-					<li>100% Vegano</li>
+					<li><a href="#pescados" onclick="abrirIndice('#pescados')">Pescados</a></li>
+					<li><a href="#carnes" onclick="abrirIndice('#carnes')">Carnes</a></li>
+					<li><a href="#vegano" onclick="abrirIndice('#vegano')">100% Vegano</a></li>
 				</ul>
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-5">
@@ -80,25 +79,49 @@
 							<div>
 								<b>Churrasco de cerdo</b>
 							</div>
-							<div class="precio"><span>8,50 €</span></div>
+							<div class="precio">
+								<span>10.50€</span>
+								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
+							</div>
+						</li>
+						<li>
+							<div>
+								<b>Chorizo criollo</b>
+							</div>
+							<div class="precio">
+								<span>8.50€</span>
+								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
+							</div>
 						</li>
 						<li>
 							<div>
 								<b>Ración de guacamole casero con nachos</b>
 							</div>
-							<div class="precio"><span>8,50 €</span></div>
+							<div class="precio"><span>8.50€</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Ración de patatas con ali oli</b>
 							</div>
-							<div class="precio"><span>5,50 €</span></div>
+							<div class="precio"><span>5.50€</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Ración de patatas bravas</b>
 							</div>
-							<div class="precio"><span>5,50 €</span></div>
+							<div class="precio"><span>5.50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Pollo a la pepitoria</b>
+							</div>
+							<div class="precio"><span>11.50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Pato a la pekinesa</b>
+							</div>
+							<div class="precio"><span>12.50€</span></div>
 						</li>
 					</ul>
 				</div>
@@ -113,35 +136,35 @@
 								<b>Tortilla de patata</b>
 								<span></span>
 							</div>
-							<div class="precio"><span>7 €</span></div>
+							<div class="precio"><span>7€</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Tortilla de patata con cebolla</b>
 								<span></span>
 							</div>
-							<div class="precio"><span>8 €</span></div>
+							<div class="precio"><span>8€</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Tortilla de patata con chorizo</b>
 								<span></span>
 							</div>
-							<div class="precio"><span>8,5 €</span></div>
+							<div class="precio"><span>8.50€</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Tortilla de patata con espárragos</b>
 								<span></span>
 							</div>
-							<div class="precio"><span>8,75 €</span></div>
+							<div class="precio"><span>8.75€</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Tortilla de patata con huevos ecológicos</b>
 								<span></span>
 							</div>
-							<div class="precio"><span>12,5 €</span></div>
+							<div class="precio"><span>12.50€</span></div>
 						</li>
 					</ul>
 				</div>
@@ -155,44 +178,113 @@
 							<div>
 								<b>Salmón ahumado</b>
 							</div>
-							<div class="precio"><span>9'95 €</span></div>
+							<div class="precio"><span>9.95€</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Merluza</b>
 							</div>
-							<div class="precio"><span>7 €</span></div>
+							<div class="precio"><span>7€</span></div>
 						</li>
 						<li>
 							<div>
 								<b>Pez espada</b>
 							</div>
-							<div class="precio"><span>18,5 €</span></div>
+							<div class="precio"><span>18.50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Atún</b>
+							</div>
+							<div class="precio"><span>6.95€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Cocochas de bacalao al pil pil</b>
+							</div>
+							<div class="precio"><span>11.50€</span></div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="indiceProductos" id="carnes">
+						<span><b>Carnes</b></span>
+						<img class="icono" src="./img/iconos/flecha_derecha.svg" />
+					</div>
+					<ul class="listaProductos listaCarta">
+						<li>
+							<div>
+								<b>Solomillo de ternera (250g)</b>
+							</div>
+							<div class="precio"><span>23.50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Entrecot</b>
+							</div>
+							<div class="precio"><span>24.50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Hamburguesa de carne de buey</b>
+							</div>
+							<div class="precio"><span>17.50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Chicharrones</b>
+							</div>
+							<div class="precio"><span>6.95€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Bistec de pollo</b>
+							</div>
+							<div class="precio"><span>11.5€</span></div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="indiceProductos" id="vegano">
+						<span><b>100% Vegano</b></span>
+						<img class="icono" src="./img/iconos/flecha_derecha.svg" />
+					</div>
+					<ul class="listaProductos listaCarta">
+						<li>
+							<div>
+								<b>Ensalada (Lechuga, tomate y cebolla)</b>
+							</div>
+							<div class="precio"><span>4.50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Ensalada completa (Lechuga, tomate, cebolla, aceitunas, espárragos y maíz</b>
+							</div>
+							<div class="precio"><span>7.50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Hamburguesa de tofu</b>
+							</div>
+							<div class="precio"><span>11.50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Curry de garbanzos con mango</b>
+							</div>
+							<div class="precio"><span>15.95€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Burritos veganos</b>
+							</div>
+							<div class="precio"><span>11.50€</span></div>
 						</li>
 					</ul>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 colCarrito">
-				<div class="carrito">
-					<div style="display: none;"></div>
-					<ul>
-						<li>
-							<div>
-								<b>Tortilla de patata vegana con cebolla</b>
-								<input type="number" value="1" min="1">
-								<i class="icon-plus btInput"></i>
-								<i class="icon-minus btInput"></i>
-								<i class="icon-trash-empty"></i>
-							</div>
-							<span>9,00€</span>
-						</li>
-					</ul>
-					<b>Total pedido</b>
-					<b id="precioTotal">9,00 €</b>
-				</div>
-				<div id="pagar">
-					<input type="submit" value="Realizar pedido">
-				</div>
+			<div class="col-xs-12 col-sm-6 col-md-4" id="colCarrito">
+
 			</div>
 		</div>
 	</div>
