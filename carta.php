@@ -79,49 +79,77 @@
 							<div>
 								<b>Churrasco de cerdo</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio">
 								<span>10.50€</span>
 								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
+=======
+							<div class="precio"><span>10,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Chorizo criollo</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio">
 								<span>8.50€</span>
 								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
+=======
+							<div class="precio"><span>8,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Ración de guacamole casero con nachos</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>8.50€</span></div>
+=======
+							<div class="precio"><span>8,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Ración de patatas con ali oli</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>5.50€</span></div>
+=======
+							<div class="precio"><span>5,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Ración de patatas bravas</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>5.50€</span></div>
+=======
+							<div class="precio"><span>5,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Pollo a la pepitoria</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>11.50€</span></div>
+=======
+							<div class="precio"><span>11,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Pato a la pekinesa</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>12.50€</span></div>
+=======
+							<div class="precio"><span>12,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 					</ul>
 				</div>
@@ -150,21 +178,33 @@
 								<b>Tortilla de patata con chorizo</b>
 								<span></span>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>8.50€</span></div>
+=======
+							<div class="precio"><span>8,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Tortilla de patata con espárragos</b>
 								<span></span>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>8.75€</span></div>
+=======
+							<div class="precio"><span>8,75€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Tortilla de patata con huevos ecológicos</b>
 								<span></span>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>12.50€</span></div>
+=======
+							<div class="precio"><span>12,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 					</ul>
 				</div>
@@ -178,7 +218,11 @@
 							<div>
 								<b>Salmón ahumado</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>9.95€</span></div>
+=======
+							<div class="precio"><span>9'95€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
@@ -190,19 +234,107 @@
 							<div>
 								<b>Pez espada</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>18.50€</span></div>
+=======
+							<div class="precio"><span>18,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Atún</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>6.95€</span></div>
+=======
+							<div class="precio"><span>6'95€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 						<li>
 							<div>
 								<b>Cocochas de bacalao al pil pil</b>
 							</div>
+<<<<<<< HEAD
 							<div class="precio"><span>11.50€</span></div>
+=======
+							<div class="precio"><span>11,50€</span></div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="indiceProductos" id="carnes">
+						<span><b>Carnes</b></span>
+						<img class="icono" src="./img/iconos/flecha_derecha.svg" />
+					</div>
+					<ul class="listaProductos listaCarta">
+						<li>
+							<div>
+								<b>Solomillo de ternera (250g)</b>
+							</div>
+							<div class="precio"><span>23'50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Entrecot</b>
+							</div>
+							<div class="precio"><span>24'50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Hamburguesa de carne de buey</b>
+							</div>
+							<div class="precio"><span>17,50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Chicharrones</b>
+							</div>
+							<div class="precio"><span>6'95€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Bistec de pollo</b>
+							</div>
+							<div class="precio"><span>11,5€</span></div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="indiceProductos" id="vegano">
+						<span><b>100% Vegano</b></span>
+						<img class="icono" src="./img/iconos/flecha_derecha.svg" />
+					</div>
+					<ul class="listaProductos listaCarta">
+						<li>
+							<div>
+								<b>Ensalada (Lechuga, tomate y cebolla)</b>
+							</div>
+							<div class="precio"><span>4'50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Ensalada completa (Lechuga, tomate, cebolla, aceitunas, espárragos y maíz</b>
+							</div>
+							<div class="precio"><span>7'50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Hamburguesa de tofu</b>
+							</div>
+							<div class="precio"><span>11,50€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Curry de garbanzos con mango</b>
+							</div>
+							<div class="precio"><span>15'95€</span></div>
+						</li>
+						<li>
+							<div>
+								<b>Burritos veganos</b>
+							</div>
+							<div class="precio"><span>11,50€</span></div>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 						</li>
 					</ul>
 				</div>
@@ -243,6 +375,11 @@
 							<div class="precio"><span>11.5€</span></div>
 						</li>
 					</ul>
+<<<<<<< HEAD
+=======
+					<b>Total pedido</b>
+					<b id="precioTotal">9,00€</b>
+>>>>>>> 5383bbe975e251f45ff94f27c14295b75be79ebe
 				</div>
 				<div>
 					<div class="indiceProductos" id="vegano">
