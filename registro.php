@@ -13,15 +13,45 @@
 <body>
     <?php
     include 'baseDeDatos.php';
+    include 'Usuario.php';
+    //Utilizar las sesiones.
+    session_start();
 
-    if (isset($_POST['user']) && isset($_POST['password']) && isset($_POST['email'])) {
+    //Coger datos del formulario
+    if (isset($_POST["user"]) && isset($_POST["password"]) && isset($_POST["email"])) {
         //Usuario
         $user = $_POST["user"];
         //Contraseña
         $password = $_POST["password"];
+        //Email
+        $email = $_POST["email"];
 
-        //Registrar usuario
-        registrarUsuario($user, $password);
+        //Si no coinciden las contraseñas.
+        if (strlen($password) < 6) {
+            print("<p id='info'>La contraseña es demasiado corta.</p>");
+            //Si el usuario no es suficientemente largo.
+        } else if (strlen($user) < 1) {
+            print("<p id='info'>El nombre es demasiado corto.</p>");
+            //Si la captcha es errónea.
+        } else{
+            //Todo correcto.
+            //Cifrar la contraseña y guardarla
+            if(DB::comprobarUsuario($email, $password)){
+                print("<p id='info'>El correo ya existe</p>");
+            } else{
+                if (DB::registrarUsuario($user, $password, $email)) {
+                    //Guardamos el usuario y la contraseña en la sesión actual.
+                     $_SESSION['usuario'] = $email;
+                     $_SESSION['pass'] = $password;
+   
+                   //Creamos objeto para guardar usuario y contraseña (sin cifrar).
+                   $_SESSION['usuario'] = serialize(new Usuario($user, $password));
+                   //Al registrarse el usuario se redirecciona a la página principal.
+                   header('Refresh: 2; URL=carta.php');
+               }
+            }
+
+        }
     }
     ?>
 
@@ -34,15 +64,15 @@
                     <input type="email" name="email" class="input" placeholder="Email" />
                     <input type="password" name="password" class="input" placeholder="Contraseña" />
                 </div>
-                <button class="submit-btn">Sign up</button>
-                <input type="submit" name="" value="Buscar" id="boton1">
+                <input class="submit-btn" value="Registrarse" type="submit">
+                <!--<button class="submit-btn">Sign up</button>-->
             </div>
             <div class="login slide-up">
                 <div class="center">
                     <h2 class="form-title" id="login"><span>or</span>Log in</h2>
                     <div class="form-holder">
                         <input type="email" name="email2" class="input" placeholder="Email" />
-                        <input type="password" name="email2" class="input" placeholder="Contraseña" />
+                        <input type="password" name="password2" class="input" placeholder="Contraseña" />
                     </div>
                     <button class="submit-btn">Log in</button>
                 </div>
