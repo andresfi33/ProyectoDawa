@@ -56,21 +56,6 @@ nav img {
 /* Fin nav */
 
 
-/* Carrusel */
-
-.carousel-inner img {
-    max-height: 650px;
-    width: 100% !important;
-}
-
-.carousel-inner {
-    margin-bottom: 2em;
-}
-
-
-/* Fin carrusel */
-
-
 /* Footer */
 
 .footer {
@@ -149,17 +134,3 @@ nav img {
 
 
 /* Fin footer */
-
-
-/* Contenido */
-
-#contenido img {
-    max-height: 30em;
-}
-
-#contenido span {
-    margin: 1em;
-}
-
-
-/* Fin contenido /*

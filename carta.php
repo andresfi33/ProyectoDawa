@@ -10,13 +10,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
 	<!-- FIN BOOTSTRAP -->
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="carta.css">
 	<title>Carta</title>
 	<link rel="icon" type="image/png" href="img/iconoRestaurante.png">
 </head>
 
 <body>
 	<?php
+	require 'Usuario.php';
 	//Utilizar las sesiones.
 	session_start();
 
@@ -27,7 +28,7 @@
 	?>
 	<nav class="navbar navbar-expand-lg">
 		<div class="container">
-			<a class="navbar-brand" href="#"><img src="img/iconoRestaurante.png" class="logo img-fluid"></a>
+			<a class="navbar-brand" href="index.php"><img src="img/iconoRestaurante.png" class="logo img-fluid"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -37,17 +38,22 @@
 						<a class="nav-link active" aria-current="page" target="_blank" href="https://www.google.es/maps/place/Fernando+Wirtz+Su%C3%A1rez/@43.3554532,-8.4055386,18.65z/data=!4m5!3m4!1s0xd2e7c9aecfac647:0x603ea84bac75a96d!8m2!3d43.3557146!4d-8.4058278">Localización</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
+						<a class="nav-link" href="carta.php">Carta</a>
 					</li>
 					<li class="nav-item">
 						<div class="dropdown">
 							<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Dropdown button
+								<img src="./img/iconos/login.svg" />
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<!--<a class="dropdown-item" href="#">Action</a>-->
-								<a class="dropdown-item" href="registro.php">Registrarse</a>
-								<a class="dropdown-item" href="#">Cerrar Sesión</a>
+								<?php
+									if(isset($_SESSION['usuario'])){
+										echo '<a class="dropdown-item" href="pedidos.php">Ver pedidos</a>
+											  <a class="dropdown-item" href="logout.php">Cerrar Sesión</a>';
+									} else{
+										echo '<a class="dropdown-item" href="registro.php">Registrarse</a>';
+									}
+								?>
 							</div>
 						</div>
 					</li>
@@ -317,7 +323,7 @@
 						</li>
 						<li>
 							<div>
-								<b>Chicharrones</b>
+								<b>Chicharrones</b>	
 							</div>
 							<div class="precio"><span>6.95€</span></div>
 						</li>
