@@ -59,10 +59,6 @@ class DB {
         $resultado = mysqli_query($conexion, $consulta) or die("Problema en la consulta de los datos");
 
         $columna = mysqli_fetch_array($resultado);
-        //Cerrar conexión
-        if ($conexion) {
-            mysqli_close($conexion);
-        }
 
         if(null != $columna){
             $passwordCifrada = md5($password);
@@ -71,6 +67,11 @@ class DB {
             } else {
                 $existe = false;
             }
+        }
+
+        //Cerrar conexión
+        if ($conexion) {
+            mysqli_close($conexion);
         }
 
         return $existe;
