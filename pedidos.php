@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -61,7 +61,7 @@
         </div>
     </nav>
 
-
+    
 
     <footer class="footer">
         <div class="footerDireccion">

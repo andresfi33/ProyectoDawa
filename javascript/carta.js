@@ -1,9 +1,10 @@
-$(document).ready(function () {
-    $(".indiceProductos").click(function () {
+$(document).ready(function() {
+    $(".indiceProductos").click(function() {
         $(this).next().toggle();
         $(this).children("img").toggleClass("icono-rotado");
     });
 });
+
 
 function abrirIndice(idIndice) {
     $(idIndice).next().css("display", "block");
@@ -40,10 +41,11 @@ function anadirPedido(linea) {
             "</li>" +
             "</ul>" +
             "<b>Total pedido: </b>" +
-            "<b id='precioTotal'>" + precio + "</b>" +
+            "<b id='precioTotal' name='precioTotal'>" + precio + "</b>" +
             "</div>" +
             "<div id='pagar'>" +
-            "<input type='submit' value='Realizar pedido'>" +
+            "<input type='submit' onclick='crearDatosPedido();' id='pedido' name='pedido' value='Realizar pedido'>" +
+            "</div>" +
             "</div>");
     } else {
         let filaComida = buscarAlimentoPedido(comida);
@@ -52,14 +54,14 @@ function anadirPedido(linea) {
             //Actualizar cantidad
             let inputCantidad = $(".carrito").children("ul").children("li").eq(filaComida).find("input");
             let cantidad = Number(inputCantidad.val()) + 1;
-            
+
             inputCantidad.val(cantidad);
 
             //Actualizar precio producto
             let precioProducto = $(".carrito").children("ul").children("li").eq(filaComida).children("span");
-            let precioTotalProducto = Number(precioProducto.text().substr(0, precioProducto.text().length-1));
+            let precioTotalProducto = Number(precioProducto.text().substr(0, precioProducto.text().length - 1));
 
-            precioTotalProducto += Number(precio.substr(0, precio.length-1));
+            precioTotalProducto += Number(precio.substr(0, precio.length - 1));
 
             precioProducto.text(precioTotalProducto + "€");
         } else {
@@ -113,4 +115,28 @@ function buscarAlimentoPedido(comida) {
     };
 
     return numFilaComida;
+}
+
+/**
+ * Crea los datos del pedido para registrar en la base de datos
+ * @returns $datosPedido
+ */
+function crearDatosPedido() {
+    var datosPedido = "";
+    var precioTotalPedido = "";
+
+    var listaPedidos = $(".carrito").children("ul");
+
+    for (let i = 0; i < listaPedidos.children().length; i++) {
+        let precio = listaPedidos.children("li").eq(i).children("span").text();
+        let nombrePedido = listaPedidos.children("li").eq(i).children("div").children("b").text();
+        let cantidadPedido = listaPedidos.children("li").eq(i).children("div").children("input").val();
+
+        datosPedido += nombrePedido + "," + cantidadPedido + "," + precio + ";";
+    };
+
+    precioTotalPedido = calcularPrecioTotal();
+
+    $("#datosPedido").val(datosPedido);
+    $("#precioTotalPedido").val(precioTotalPedido.substr(0, precioTotalPedido.length - 1));
 }

@@ -11,6 +11,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
 	<!-- FIN BOOTSTRAP -->
 	<link rel="stylesheet" href="carta.css">
+	<script src="./javascript/carta.js"></script>
 	<title>Carta</title>
 	<link rel="icon" type="image/png" href="img/iconoRestaurante.png">
 </head>
@@ -18,12 +19,23 @@
 <body>
 	<?php
 	require 'Usuario.php';
+	require 'baseDeDatos.php';
 	//Utilizar las sesiones.
 	session_start();
 
 	//Comprobamos si la sesión está iniciada
 	if (isset($_SESSION['usuario'])) {
 		$user = unserialize($_SESSION['usuario']);
+		
+		if(isset($_POST['pedido'])){
+			$precioTotal = $_POST['precioTotalPedido'];
+			$email = unserialize($_SESSION['usuario']);
+			$datosPedido = $_POST['datosPedido'];
+
+			DB::crearPedido($email->getNombre(),$datosPedido,$precioTotal);
+
+			header('Refresh: 2; URL=pedidos.php');
+		}
 	}
 	?>
 	<nav class="navbar navbar-expand-lg">
@@ -374,12 +386,18 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4" id="colCarrito">
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<form method="post">
+					<input type="text" id='datosPedido' name='datosPedido'></input>
+					<input type="text" id='precioTotalPedido' name='precioTotalPedido'></input>
+					<div id="colCarrito">
 
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
-	<script src="./javascript/carta.js"></script>
+	
 </body>
 
 </html>

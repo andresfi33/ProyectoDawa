@@ -78,6 +78,42 @@ class DB {
         
     }
 
+    /**
+    * Método que registra un nuevo usuario en una base de datos
+    * @param $user
+    * @param $password
+    * @return $result
+    */
+    public static function crearPedido($email, $datosPedido, $precioPedido)
+    {
+        $servidor = "localhost";
+        $baseDeDatos = "restaurante";
+        $usuario = "root";
+        $contrasenha = "";
+
+        date_default_timezone_set('UTC');
+        $fechaPedido = date("Y-m-d H:i:s"); 
+
+        //Conexión con el servidor
+        $conexion = mysqli_connect($servidor, $usuario, $contrasenha) or die("No se ha podido conectar con el servidor");
+
+        //Conexión con la base de datos
+        $db = mysqli_select_db($conexion, $baseDeDatos) or die("No se ha podido conectar con la base de datos");
+
+        //Insert
+        $insert = "INSERT INTO pedidos (usuario, datosPedido, precioPedido, fechaPedido) VALUES ('$email', '$datosPedido', '$precioPedido', '$fechaPedido')";
+
+        //Resultado del insert
+        $result = mysqli_query($conexion, $insert);
+
+        //Cerrar conexión
+        if ($conexion) {
+            mysqli_close($conexion);
+        }
+
+        return $result;
+    }
+
 }
 
 ?>

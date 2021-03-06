@@ -3,6 +3,30 @@
 }
 
 
+/* Contenido */
+
+#contenido div {
+    width: fit-content;
+    margin: auto;
+}
+
+#contenido>p {
+    text-align: center;
+    margin-top: 2em;
+}
+
+#contenido>div>p {
+    text-align: center;
+}
+
+#contenido>div>p:first-child {
+    margin-top: 2em;
+}
+
+
+/* Fin contenido */
+
+
 /* Nav */
 
 nav,
