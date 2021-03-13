@@ -38,40 +38,42 @@
 		}
 	}
 	?>
-	<nav class="navbar navbar-expand-lg">
-		<div class="container">
-			<a class="navbar-brand" href="index.php"><img src="img/iconoRestaurante.png" class="logo img-fluid"></a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" target="_blank" href="https://www.google.es/maps/place/Fernando+Wirtz+Su%C3%A1rez/@43.3554532,-8.4055386,18.65z/data=!4m5!3m4!1s0xd2e7c9aecfac647:0x603ea84bac75a96d!8m2!3d43.3557146!4d-8.4058278">Localización</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="carta.php">Carta</a>
-					</li>
-					<li class="nav-item">
-						<div class="dropdown">
-							<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img src="./img/iconos/login.svg" />
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<?php
-									if(isset($_SESSION['usuario'])){
-										echo '<a class="dropdown-item" href="pedidos.php">Ver pedidos</a>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php"><img src="img/iconoRestaurante.png" class="logo img-fluid"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" target="_blank" href="https://www.google.es/maps/place/Fernando+Wirtz+Su%C3%A1rez/@43.3554532,-8.4055386,18.65z/data=!4m5!3m4!1s0xd2e7c9aecfac647:0x603ea84bac75a96d!8m2!3d43.3557146!4d-8.4058278">Localización</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carta.php">Carta</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="./img/iconos/login.svg" />
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <?php
+                                if (isset($_SESSION['usuario'])) {
+                                    echo '<a class="dropdown-item" href="pedidos.php">Ver pedidos</a>
 											  <a class="dropdown-item" href="logout.php">Cerrar Sesión</a>';
-									} else{
-										echo '<a class="dropdown-item" href="registro.php">Registrarse</a>';
-									}
-								?>
-							</div>
-						</div>
-					</li>
-			</div>
-		</div>
-	</nav>
+                                } else {
+                                    echo '<a class="dropdown-item" href="registro.php">Registrarse</a>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 	<div id="tituloCarta" class="colorPrincipal">
 		¿Que le apetece hoy?
@@ -79,7 +81,7 @@
 
 	<div class="container">
 		<div class="row container principal">
-			<div class="col-xs-12 col-sm-6 col-md-3 indice">
+			<div class="col-xs-12 col-sm-12 col-md-3 indice">
 				<span class="colorPrincipal">Categorías</span>
 				<ul class="listaCarta">
 					<li><a href="#nuestrasEspecialidades" onclick="abrirIndice('#nuestrasEspecialidades')">Nuestras Especialidades</a></li>
@@ -89,13 +91,7 @@
 					<li><a href="#vegano" onclick="abrirIndice('#vegano')">100% Vegano</a></li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-5">
-				<form class="d-flex">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button type="submit">
-						<img src="./img/iconos/buscar.svg" />
-					</button>
-				</form>
+			<div class="col-xs-12 col-sm-12 col-md-5">
 				<div>
 					<div class="indiceProductos" id="nuestrasEspecialidades">
 						<span><b>Nuestras especialidades</b></span>
@@ -386,7 +382,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="col-xs-12 col-sm-12 col-md-4">
 				<form method="post">
 					<input type="text" id='datosPedido' name='datosPedido'></input>
 					<input type="text" id='precioTotalPedido' name='precioTotalPedido'></input>

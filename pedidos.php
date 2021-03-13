@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="pedidos.css">
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
     <!-- FIN BOOTSTRAP -->
-    <title>Principal</title>
+    <title>Pedidos</title>
 </head>
 
 <body>
@@ -26,16 +27,18 @@
         $user = unserialize($_SESSION['usuario']);
     }
     ?>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
             <a class="navbar-brand" href="index.php"><img src="img/iconoRestaurante.png" class="logo img-fluid"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" target="_blank" href="https://www.google.es/maps/place/Fernando+Wirtz+Su%C3%A1rez/@43.3554532,-8.4055386,18.65z/data=!4m5!3m4!1s0xd2e7c9aecfac647:0x603ea84bac75a96d!8m2!3d43.3557146!4d-8.4058278">Localización</a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" target="_blank" href="https://www.google.es/maps/place/Fernando+Wirtz+Su%C3%A1rez/@43.3554532,-8.4055386,18.65z/data=!4m5!3m4!1s0xd2e7c9aecfac647:0x603ea84bac75a96d!8m2!3d43.3557146!4d-8.4058278">Localización</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="carta.php">Carta</a>
@@ -57,11 +60,44 @@
                             </div>
                         </div>
                     </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    
+    <?php
+    require 'baseDeDatos.php';
+    $pedidos = (object) DB::consultaPedidosUsuario(unserialize($_SESSION['usuario'])->getNombre());
+
+    while ($row = $pedidos->fetch_assoc()) {
+    ?>
+
+        <div class="pedido container">
+            <h2>Pedido Nº <?php echo $row["nPedido"]; ?></h2>
+            <div class="datosPersonales"><span>Usuario: <?php echo unserialize($_SESSION['usuario'])->getNombre() ?></span><span>Fecha: <?php echo $row["fechaPedido"]; ?></span></div>
+
+
+            <?php
+            //Error
+            $pedidoActual = $row["datosPedido"];
+            $productos = explode(";", substr($pedidoActual, 0, -1));
+
+            for ($i = 0; $i < count($productos); $i++) {
+            ?>
+                <div>
+                    <?php $pedido = explode(",", $productos[$i]); ?>
+                    <p><?php echo implode(" - ", $pedido); ?></p>
+                </div>
+            <?php
+            }
+            //Error
+            ?>
+
+            <h3><?php echo 'Precio total: ', $row["precioPedido"]; ?></h3>
+        </div>
+    <?php
+    }
+    ?>
 
     <footer class="footer">
         <div class="footerDireccion">

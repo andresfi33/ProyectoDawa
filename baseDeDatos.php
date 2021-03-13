@@ -114,6 +114,37 @@ class DB {
         return $result;
     }
 
+    /**
+     * Método que comprueba en la base de datos si un usuario existe
+     * @param type $user
+     * @param type $password
+     * @return boolean
+     */
+    public static function consultaPedidosUsuario($email) {
+        $servidor = "localhost";
+        $baseDeDatos = "restaurante";
+        $usuario = "root";
+        $contrasenha = "";
+        $resultado = "";
+        //Conexión con el servidor
+        $conexion = mysqli_connect($servidor, $usuario, $contrasenha) or die("No se ha podido conectar con el servidor");
+
+        //Conexión con la base de datos
+        $db = mysqli_select_db($conexion, $baseDeDatos) or die("No se ha podido conectar con la base de datos");
+
+        $consulta = "select nPedido, datosPedido, precioPedido, fechaPedido from pedidos where usuario  = '$email'";
+
+        //Consulta
+        $resultado = mysqli_query($conexion, $consulta) or die("Problema en la consulta de los datos");
+
+        //Cerrar conexión
+        if ($conexion) {
+            mysqli_close($conexion);
+        }
+
+        return $resultado;
+    }
+
 }
 
 ?>

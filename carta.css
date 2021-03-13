@@ -33,6 +33,19 @@
 
 .indice {
     width: 100%;
+    font-weight: 500;
+}
+
+.carrito,
+.indice,
+#pagar input {
+    border: 1px solid var(--main-bg-color);
+    border-radius: 5px;
+}
+
+.indice span {
+    text-decoration: underline;
+    font-size: 1.25em;
 }
 
 img {
@@ -87,13 +100,18 @@ ul.listaCarta>li {
 }
 
 .indice {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 2em;
     background-color: #ff4301;
     padding-top: 1em;
     font-size: 1.2em;
     height: 23em;
+}
+
+@media only screen and (min-width: 769px) {
+    .indice {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 2em;
+    }
 }
 
 .principal {
@@ -155,13 +173,23 @@ nav img {
     padding: 1em;
 }
 
+.carrito ul {
+    border-bottom: 2px solid var(--main-bg-color);
+}
+
 .carrito li {
     display: flex;
     justify-content: space-between;
 }
 
-.carrito ul {
-    border-bottom: 2px solid var(--main-bg-color);
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .carrito li {
+        display: block;
+    }
+    .carrito ul b,
+    .carrito ul input {
+        float: inherit;
+    }
 }
 
 .carrito span {

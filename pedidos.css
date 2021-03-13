@@ -56,6 +56,28 @@ nav img {
 /* Fin nav */
 
 
+/* Zona pedidos */
+
+.pedido {
+    width: 100%;
+    border: 1px solid var(--main-bg-color);
+    border-radius: 5px;
+    margin-bottom: 2em;
+    padding: 1em;
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.05);
+}
+
+.datosPersonales {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Fin zona pedidos */
+
+
 /* Footer */
 
 .footer {
