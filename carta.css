@@ -124,43 +124,6 @@ ul.listaCarta>li {
 }
 
 
-/* Nav */
-
-nav {
-    background-color: var(--main-bg-color);
-}
-
-nav a,
-.dropdown button {
-    color: white;
-}
-
-nav>div.container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.navbar-collapse {
-    justify-content: flex-end!important;
-}
-
-#navbarSupportedContent {
-    justify-content: space-between;
-}
-
-.dropdown button:hover,
-nav a:hover {
-    color: #ff4301;
-}
-
-nav img {
-    min-height: 2em;
-}
-
-
-/* Fin nav */
-
-
 /* Carrito */
 
 #colCarrito {

@@ -132,7 +132,7 @@ class DB {
         //Conexión con la base de datos
         $db = mysqli_select_db($conexion, $baseDeDatos) or die("No se ha podido conectar con la base de datos");
 
-        $consulta = "select nPedido, datosPedido, precioPedido, fechaPedido from pedidos where usuario  = '$email'";
+        $consulta = "select nPedido, datosPedido, precioPedido, fechaPedido from pedidos where usuario  = '$email' order by nPedido desc";
 
         //Consulta
         $resultado = mysqli_query($conexion, $consulta) or die("Problema en la consulta de los datos");

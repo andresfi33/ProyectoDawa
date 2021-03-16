@@ -32,7 +32,7 @@ function anadirPedido(linea) {
             "<li>" +
             "<div>" +
             "<b>" + comida + "</b>" +
-            "<input type='number' value='1' min='1'>" +
+            "<input type='number' value='1' min='0' onchange='actualizaCantidad(this)'>" +
             "<i class='icon-plus btInput'></i>" +
             "<i class='icon-minus btInput'></i>" +
             "<i class='icon-trash-empty'></i>" +
@@ -58,17 +58,17 @@ function anadirPedido(linea) {
             inputCantidad.val(cantidad);
 
             //Actualizar precio producto
-            let precioProducto = $(".carrito").children("ul").children("li").eq(filaComida).children("span");
+            /*let precioProducto = $(".carrito").children("ul").children("li").eq(filaComida).children("span");
             let precioTotalProducto = Number(precioProducto.text().substr(0, precioProducto.text().length - 1));
 
             precioTotalProducto += Number(precio.substr(0, precio.length - 1));
 
-            precioProducto.text(precioTotalProducto + "€");
+            precioProducto.text(precioTotalProducto + "€");*/
         } else {
             //Añadir nueva fila
             $(".carrito").children("ul").append("<li><div>" +
                 "<b>" + comida + "</b>" +
-                "<input type='number' value='1' min='1'>" +
+                "<input type='number' value='1' min='0' onchange='actualizaCantidad(this)'>" +
                 "<i class='icon-plus btInput'></i>" +
                 "<i class='icon-minus btInput'></i>" +
                 "<i class='icon-trash-empty'></i>" +
@@ -90,7 +90,9 @@ function calcularPrecioTotal() {
 
     for (let i = 0; i < listaPedidos.children().length; i++) {
         let precio = listaPedidos.children("li").eq(i).children("span").text();
-        totalPedido += Number(precio.substr(0, precio.length - 1));
+        let cantidad = listaPedidos.children("li").eq(i).children("div").children("input").val();
+
+        totalPedido += Number(precio.substr(0, precio.length - 1) * cantidad);
     };
 
     totalPedido += "€";
@@ -139,4 +141,31 @@ function crearDatosPedido() {
 
     $("#datosPedido").val(datosPedido);
     $("#precioTotalPedido").val(precioTotalPedido.substr(0, precioTotalPedido.length - 1));
+}
+
+/**
+ * Actualiza el precio total del pedido y elimina las filas en las que no hay cantidad
+ * @param {input que se está modificando} input 
+ */
+function actualizaCantidad(input) {
+    var listaPedidos = $(".carrito").children("ul");
+    var numProductos = listaPedidos.children().length;
+
+    if (input.value == 0) {
+        if (numProductos == 1) {
+            $("#colCarrito").html("");
+        } else {
+            for (var i = 0; i < numProductos; i++) {
+                var producto = $(input).parent().children("b").text();
+                if (producto == listaPedidos.children("li").eq(i).children("div").children("b").text()) {
+                    listaPedidos.children().eq(i).remove();
+                    break;
+                }
+            }
+        }
+    }
+
+    //Actualizar precio total
+    let totalPedido = calcularPrecioTotal();
+    $("#precioTotal").text(totalPedido);
 }
