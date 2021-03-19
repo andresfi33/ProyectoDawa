@@ -88,7 +88,7 @@
 
     <div id="contenido" class="container">
 
-        <p>Bienvenidos a Restaurante El último bocado en A Coruña.Nuestro restaurante es ese lugar donde tanto se puede venir a tomar un desayuno saludable, como a comer como en casa, tomar unos vinos, merendar o cenar con un ambiente familiar e informal. </p>
+        <p>Bienvenidos a Restaurante El último bocado en A Coruña. Nuestro restaurante es ese lugar donde tanto se puede venir a tomar un desayuno saludable, como a comer como en casa, tomar unos vinos, merendar o cenar con un ambiente familiar e informal. </p>
 
         <div>
             <img src="img/imagen1.jpg">

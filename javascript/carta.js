@@ -44,7 +44,7 @@ function anadirPedido(linea) {
             "<b id='precioTotal' name='precioTotal'>" + precio + "</b>" +
             "</div>" +
             "<div id='pagar'>" +
-            "<input type='submit' onclick='crearDatosPedido();' id='pedido' name='pedido' value='Realizar pedido'>" +
+            "<input type='submit' onclick='crearDatosPedido();' id='pedido' name='pedido' value='Realizar pedido' " + ">" +
             "</div>" +
             "</div>");
     } else {
@@ -56,14 +56,6 @@ function anadirPedido(linea) {
             let cantidad = Number(inputCantidad.val()) + 1;
 
             inputCantidad.val(cantidad);
-
-            //Actualizar precio producto
-            /*let precioProducto = $(".carrito").children("ul").children("li").eq(filaComida).children("span");
-            let precioTotalProducto = Number(precioProducto.text().substr(0, precioProducto.text().length - 1));
-
-            precioTotalProducto += Number(precio.substr(0, precio.length - 1));
-
-            precioProducto.text(precioTotalProducto + "€");*/
         } else {
             //Añadir nueva fila
             $(".carrito").children("ul").append("<li><div>" +
@@ -163,6 +155,10 @@ function actualizaCantidad(input) {
                 }
             }
         }
+    } else if (input.value > 25) {
+        input.value = 25;
+    } else if (input.value < 0) {
+        input.value = 1;
     }
 
     //Actualizar precio total

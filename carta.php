@@ -37,6 +37,9 @@
 
 			header('Refresh: 2; URL=pedidos.php');
 		}
+	} else{
+		echo '<script>alert("Antes de hacer un pedido tiene que registrarse/iniciar sesión");</script>';
+		header('Refresh: 0; URL=registro.php');
 	}
 	?>
 	<nav class="navbar navbar-expand-lg navbar-dark">
@@ -92,7 +95,7 @@
 					<li><a href="#vegano" onclick="abrirIndice('#vegano')">100% Vegano</a></li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-5">
+			<div class="col-xs-12 col-sm-12 col-md-5 productos">
 				<div>
 					<div class="indiceProductos" id="nuestrasEspecialidades">
 						<span><b>Nuestras especialidades</b></span>
@@ -122,7 +125,7 @@
 								<b>Ración de guacamole casero con nachos</b>
 							</div>
 							<div class="precio">
-								<span>8,50€</span>
+								<span>8.50€</span>
 								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -158,7 +161,7 @@
 								<b>Pato a la pekinesa</b>
 							</div>
 							<div class="precio">
-								<span>12,50€</span>
+								<span>12.50€</span>
 								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -193,7 +196,7 @@
 								<b>Tortilla de patata con chorizo</b>
 							</div>
 							<div class="precio">
-								<span>8,50€</span>
+								<span>8.50€</span>
 								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -202,7 +205,7 @@
 								<b>Tortilla de patata con espárragos</b>
 							</div>
 							<div class="precio">
-								<span>8,75€</span>
+								<span>8.75€</span>
 								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -211,7 +214,7 @@
 								<b>Tortilla de patata con huevos ecológicos</b>
 							</div>
 							<div class="precio">
-								<span>12,50€</span>
+								<span>12.50€</span>
 								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -228,7 +231,7 @@
 								<b>Salmón ahumado</b>
 							</div>
 							<div class="precio">
-								<span>9'95€</span>
+								<span>9.95€</span>
 								<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -246,7 +249,7 @@
 								<b>Pez espada</b>
 							</div>
 							<div class="precio">
-								<span>18,50€</span>
+								<span>18.50€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -255,7 +258,7 @@
 								<b>Atún</b>
 							</div>
 							<div class="precio">
-								<span>6'95€</span>
+								<span>6.95€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -264,7 +267,7 @@
 								<b>Cocochas de bacalao al pil pil</b>
 							</div>
 							<div class="precio">
-								<span>11,50€</span>
+								<span>11.50€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -281,7 +284,7 @@
 								<b>Solomillo de ternera (250g)</b>
 							</div>
 							<div class="precio">
-								<span>23'50€</span>
+								<span>23.50€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -290,7 +293,7 @@
 								<b>Entrecot</b>
 							</div>
 							<div class="precio">
-								<span>24'50€</span>
+								<span>24.50€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -299,7 +302,7 @@
 								<b>Hamburguesa de carne de buey</b>
 							</div>
 							<div class="precio">
-								<span>17,50€</span>
+								<span>17.50€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -308,7 +311,7 @@
 								<b>Chicharrones</b>
 							</div>
 							<div class="precio">
-								<span>6'95€</span>
+								<span>6.95€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -317,7 +320,7 @@
 								<b>Bistec de pollo</b>
 							</div>
 							<div class="precio">
-								<span>11,5€</span>
+								<span>11.5€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -334,7 +337,7 @@
 								<b>Ensalada (Lechuga, tomate y cebolla)</b>
 							</div>
 							<div class="precio">
-								<span>4'50€</span>
+								<span>4.50€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -343,7 +346,7 @@
 								<b>Ensalada completa (Lechuga, tomate, cebolla, aceitunas, espárragos y maíz</b>
 							</div>
 							<div class="precio">
-								<span>7'50€</span>
+								<span>7.50€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -352,7 +355,7 @@
 								<b>Hamburguesa de tofu</b>
 							</div>
 							<div class="precio">
-								<span>11,50€</span>
+								<span>11.50€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -361,7 +364,7 @@
 								<b>Curry de garbanzos con mango</b>
 							</div>
 							<div class="precio">
-								<span>15'95€</span>
+								<span>15.95€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>
@@ -370,7 +373,7 @@
 								<b>Burritos veganos</b>
 							</div>
 							<div class="precio">
-								<span>11,50€</span>
+								<span>11.50€</span>
 							<img src="./img/iconos/anadir.svg" onclick="anadirPedido(this)" />
 							</div>
 						</li>

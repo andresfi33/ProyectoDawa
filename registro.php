@@ -81,7 +81,7 @@
     <form method="post">
         <div class="form-structor">
             <div class="signup">
-                <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+                <h2 class="form-title" id="signup"><span>o</span>Registro</h2>
                 <div class="form-holder">
                     <input type="text" name="user" class="input" placeholder="Nombre" />
                     <input type="email" name="email" class="input" placeholder="Email" />
@@ -91,7 +91,7 @@
             </div>
             <div class="login slide-up">
                 <div class="center">
-                    <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+                    <h2 class="form-title" id="login"><span>o</span>Inicio de sesión</h2>
                     <div class="form-holder">
                         <input type="email" name="email2" class="input" placeholder="Email" />
                         <input type="password" name="password2" class="input" placeholder="Contraseña" />
